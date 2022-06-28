@@ -9,6 +9,17 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+//function date
+app.locals.filterDate = function (date){
+
+  var alldate = new Date(date)
+  console.log(alldate.getDate()+"/"+alldate.getMonth()+"/"+alldate.getFullYear());
+  return alldate.getDate()+"/"+alldate.getMonth()+"/"+alldate.getFullYear()
+  
+
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
